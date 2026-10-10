@@ -1,0 +1,406 @@
+
+:root {
+    --page: #f4f7f8;
+    --navy: #0a2540;
+    --navy-deep: #071827;
+    --blue: #0f457b;
+    --cyan: #087d8d;
+    --cyan-light: #bdeef2;
+    --text: #183242;
+    --muted: #4c606c;
+    --line: #cbd9df;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Arial, Tahoma, sans-serif;
+    line-height: 1.65;
+}
+
+
+a {
+    color: #075d73;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--navy);
+}
+
+a:focus-visible {
+    outline: 3px solid #087d8d;
+    outline-offset: 3px;
+}
+
+/* ปุ่มข้ามไปยังเนื้อหาหลัก */
+.skip-link {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 10;
+    padding: 0.5rem 0.8rem;
+    transform: translateY(-160%);
+    background: var(--navy-deep);
+    color: #fff;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* =========================
+   4. ส่วนหัวและเมนู
+   ========================= */
+.site-header {
+    width: min(100% - 2rem, 900px);
+    margin: 1rem auto 0;
+    border: 1px solid #b4dce4;
+    border-bottom: 3px solid #00a8bd;
+    border-radius: 0.65rem;
+    background: var(--navy);
+}
+
+.navbar {
+    min-height: 4rem;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: var(--cyan-light);
+}
+
+.nav-link {
+    padding: 0.4rem 0.5rem;
+    color: #d5f7fb;
+    font-size: 0.92rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* =========================
+   5. พื้นที่เนื้อหาหลัก
+   ========================= */
+main.container {
+    max-width: 940px;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+/* ส่วนแนะนำตัว */
+.intro {
+    min-height: 22rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.intro-copy h1 {
+    margin: 0 0 0.7rem;
+    color: var(--navy);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+}
+
+.intro-copy > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+.eyebrow,
+.card-label {
+    margin-bottom: 0.45rem;
+    color: var(--cyan);
+    font-size: 0.77rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+.section-link {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 700;
+}
+
+/* รูปโปรไฟล์ */
+.profile-img {
+    display: inline-block;
+    width: min(100%, 230px);
+    max-height: 290px;
+    object-fit: cover;
+    object-position: center 35%;
+    border: 4px solid #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 18px rgb(10 37 64 / 16%);
+}
+
+/* =========================
+   6. หัวข้อแต่ละส่วน
+   ========================= */
+.content-section {
+    padding-top: 2.2rem;
+    scroll-margin-top: 1.5rem;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-title h2,
+.reflection-section h2 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.section-title > p:last-child {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+}
+
+/* =========================
+   7. ส่วน About Me
+   ========================= */
+.about-panel {
+    overflow: hidden;
+    border: 1px solid #b8cbd4;
+    border-radius: 0.65rem;
+    background: #e8f2f5;
+}
+
+/* รูปภาพมหาวิทยาลัยหรือภาพประกอบ */
+.campus-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 235px;
+    object-fit: cover;
+    object-position: center 55%;
+}
+
+/* ข้อความแนะนำตัว */
+.about-text {
+    padding: 1.4rem 1.6rem;
+}
+
+.about-text h3 {
+    margin-bottom: 1rem;
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+/* =========================
+   8. รายละเอียดข้อมูล
+   ========================= */
+.profile-details,
+.project-details {
+    margin: 0 0 0.9rem;
+}
+
+.profile-details div,
+.project-details div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.5rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgb(10 37 64 / 12%);
+}
+
+dt {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+dd {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   9. การ์ดผลงาน Portfolio
+   ========================= */
+.portfolio-card {
+    padding: 1.25rem;
+    border: 1px solid #a9c1ce;
+    border-top: 3px solid #00a8bd;
+    border-radius: 0.55rem;
+    background: #fff;
+}
+
+.portfolio-card h3 {
+    margin: 0 0 0.9rem;
+    color: var(--navy);
+    font-size: 1.3rem;
+}
+
+.project-details {
+    font-size: 0.93rem;
+}
+
+.portfolio-card > p:not(.card-label):not(.evidence-placeholder) {
+    color: var(--muted);
+}
+
+
+.reflection-block {
+    margin: 0.9rem 0;
+    padding: 0.9rem 1rem;
+    border-radius: 0.4rem;
+    background: #eef5f7;
+}
+
+.reflection-block h4 {
+    margin-bottom: 0.4rem;
+    color: var(--navy);
+    font-size: 1rem;
+}
+
+.reflection-block ul,
+.reflection-section ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.reflection-block li,
+.reflection-section li {
+    margin: 0.3rem 0;
+}
+
+/* =========================
+   11. ลิงก์หลักฐานผลงาน
+   ========================= */
+.evidence-link {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-weight: 700;
+}
+
+.evidence-placeholder {
+    margin: auto 0 0;
+    padding-top: 0.5rem;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   12. Reflection ภาพรวม
+   ========================= */
+.reflection-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    padding: 1.3rem 1.5rem;
+    border: 1px solid #b8cbd4;
+    border-radius: 0.65rem;
+    background: #e8f2f5;
+}
+
+.reflection-section > p:not(.eyebrow) {
+    margin: 0.5rem 0;
+    color: var(--muted);
+}
+
+
+.site-footer {
+    padding: 1rem 0;
+    background: var(--navy);
+    color: #e3f5f7;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 575.98px) {
+
+    .site-header {
+        width: calc(100% - 1rem);
+        margin-top: 0.5rem;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding-right: 0.65rem;
+        padding-left: 0.65rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 0 !important;
+    }
+
+    .nav-link {
+        padding-right: 0.32rem;
+        padding-left: 0.32rem;
+        font-size: 0.82rem;
+    }
+
+    .intro {
+        min-height: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1.4rem;
+    }
+
+    .profile-img {
+        width: min(58vw, 200px);
+        max-height: 235px;
+    }
+
+    .content-section {
+        padding-top: 1.7rem;
+    }
+
+    .about-text {
+        padding: 1rem;
+    }
+
+    
+    .profile-details div,
+    .project-details div {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .portfolio-card {
+        padding: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
